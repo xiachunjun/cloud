@@ -7,4 +7,3 @@ server:
 spring:
   application:
     name: service-ribbon
-   
