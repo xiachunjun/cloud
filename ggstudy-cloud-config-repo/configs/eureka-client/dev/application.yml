@@ -1,9 +1,0 @@
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://10.214.169.193:8761/eureka/
-server:
-  port: 8763
-spring:
-  application:
-    name: eureka-client
