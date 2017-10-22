@@ -9,7 +9,7 @@ spring:
       server: 
         git:
           uri: https://github.com/forezp/SpringcloudConfig/
-          searchPaths: respo
+          searchPaths: configs
           username: username
           password: password
       label: master
