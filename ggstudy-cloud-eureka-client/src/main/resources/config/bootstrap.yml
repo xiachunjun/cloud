@@ -1,14 +1,3 @@
-spring:
-  application:
-    name: config-server
-  cloud:
-    config:
-      server:
-        git:
-          uri: git@github.com:xiachunjun/cloud.git
-          basedir: ggstudy-cloud-config-repo/
-          searchPaths: 'configs/{application}/{profile}'
-          strict-host-key-checking: false
 eureka:
   client:
     registerWithEureka: true
@@ -23,5 +12,14 @@ eureka:
     virtual-host-name: ${spring.application.name}
     metadata-map:
        cluster: default
-server:
-  port: 8888
+    app-group-name: xcj
+spring:
+  profiles:
+    active: dev
+  application:
+    name: eureka-client
+  cloud: 
+    config: 
+      label: master
+      profile: dev
+      uri: http://localhost:8888/
