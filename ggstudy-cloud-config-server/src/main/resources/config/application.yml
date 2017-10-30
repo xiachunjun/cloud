@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:xiachunjun/cloud.git
+          basedir: ggstudy-cloud-config-repo/
+          searchPaths: 'configs/{application}/{profile}'
+          strict-host-key-checking: false
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka
+  instance:
+    appname: ${spring.application.name}
+    leaseRenewalIntervalInSeconds: 100
+    leaseExpirationDurationInSeconds: 200
+    prefer-ip-address: true
+    virtual-host-name: ${spring.application.name}
+    metadata-map:
+       cluster: default
+server:
+  port: 8888
