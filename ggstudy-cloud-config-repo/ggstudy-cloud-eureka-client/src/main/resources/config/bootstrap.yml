@@ -1,0 +1,17 @@
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka
+  instance:
+    appname: ${spring.application.name}
+    leaseRenewalIntervalInSeconds: 100
+    leaseExpirationDurationInSeconds: 200
+spring:
+  application:
+    name: eureka-client
+server:
+  port: 80
+weixin: 
+  token: practice
